@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  /* Shared base */
+  --color-bg:       #0d0d14;
+  --color-surface:  #14141e;
+  --color-surface2: #1a1a28;
+  --color-surface3: #222233;
+  --color-border:   #2d2d42;
+  --color-border2:  #3a3a52;
+  --color-accent:   #7c6fff;
+  --color-muted:    #6b6b88;
+  --color-text:     #dcdcf0;
+
+  /* DevTools playground aliases */
+  --color-textbase: #dcdcf0;
+  --color-success:  #2ecc87;
+  --color-warning:  #f5c842;
+  --color-danger:   #ff5f7e;
+  --color-info:     #4da6ff;
+
+  /* Debug Lab colors */
+  --color-green:  #2ecc87;
+  --color-yellow: #f5c842;
+  --color-red:    #ff5f7e;
+  --color-blue:   #4da6ff;
+  --color-purple: #b07bff;
+  --color-orange: #ff8c42;
+}
+
+html { font-size: 15px; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--color-surface); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+
+/* Animations */
+@keyframes spin     { to { transform: rotate(360deg); } }
+@keyframes flash    { 0%,100% { opacity:1; } 40% { opacity:0.3; } }
+@keyframes slide-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+@keyframes bar-grow { from { width:0; } }
+@keyframes pulse-dot { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+@keyframes count-pop { 0% { transform:scale(1.6); } 100% { transform:scale(1); } }
+
+.animate-spin-slow { animation: spin 1s linear infinite; }
+.flash      { animation: flash      0.5s ease-out; }
+.slide-in   { animation: slide-in   0.25s ease-out; }
+.bar-grow   { animation: bar-grow   0.6s ease-out; }
+.pulse-dot  { animation: pulse-dot  1.5s ease-in-out infinite; }
+.count-pop  { animation: count-pop  0.3s ease-out; }
